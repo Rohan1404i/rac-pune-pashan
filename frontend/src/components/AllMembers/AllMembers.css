@@ -1,0 +1,15 @@
+
+.contTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #505050;
+}
+
+.teamCont {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
