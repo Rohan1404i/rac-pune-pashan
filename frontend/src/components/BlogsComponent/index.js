@@ -27,8 +27,6 @@ export default function BlogsComponent () {
         })
     },[])
 
-    console.log("blog :",blog);
-
     return (
         <div className='showBlogWholeCont'>
             <Header />

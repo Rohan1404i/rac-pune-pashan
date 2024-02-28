@@ -16,6 +16,7 @@ const navigate =useNavigate();
        axios.get('http://localhost:8000/user/getMember',{params:{isLeader:true},headers:{"x-api-key":1234567890123456}})
        .then(resp => {
           setLeader(resp.data);
+          console.log("resp data: ",resp.data);
        })
        .catch(err => console.log(err.message))
 
@@ -53,7 +54,7 @@ const navigate =useNavigate();
         ) : (
           Leader?.slice(0,3)?.map((teamsDetail) => {
             return (
-              <TeamDetail teamsDetail={teamsDetail} key={teamsDetail._key} />
+              <TeamDetail teamsDetail={teamsDetail} key={teamsDetail} />
             );
           })
         )}

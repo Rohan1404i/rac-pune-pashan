@@ -14,6 +14,10 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    avenue : {
+        type : String,
+        required : true
+    },
     fullDesc:{
         type: String,
         required: true,

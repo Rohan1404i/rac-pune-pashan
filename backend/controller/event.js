@@ -1,19 +1,25 @@
 const event = require("../modals/events");
+const avenue = require("../modals/avenue");
 require("dotenv").config();
 
-exports.event_get = async (req, res) => {
-  event.find({}, (error, events) => {
-    if (error) {
-      console.error("Failed to retrieve events", error);
-      res.status(500).json({ error: "Failed to retrieve events" });
-    } else {
-      res.json(events);
-    }
-  });
+exports.getEvent = async (req, res) => {
+
+  const {avenueId} = req.body;
+  const avenueInfo = await avenue.find({avenueName : avenueId})
+  if(avenueInfo) {
+    event.find({avenue : avenueId}, (error, events) => {
+      if (error) {
+        console.error("Failed to retrieve events", error);
+        res.status(500).json({ error: "Failed to retrieve events" });
+      } else {
+        res.json({events: events, avenue : avenueInfo});
+      }
+    });
+  }
 };
 
 exports.addEvent = async (req, res) => {
-  const { title, desc, image, fullDesc, eventDate, eventURL } = req.body;
+  const { title, desc, image, avenue,fullDesc, eventDate, eventURL } = req.body;
 
   const newEvent = new event({
     title,
@@ -22,6 +28,7 @@ exports.addEvent = async (req, res) => {
     fullDesc,
     eventDate,
     eventURL,
+    avenue
   });
 
   newEvent.save((error, events) => {
@@ -86,3 +93,22 @@ exports.deleteEvent = async (req, res) => {
     }
   });
 };
+
+exports.addAvenue = async (req, res) => {
+
+  const {avenueName, director, desc, fullDesc} = req.body;
+
+  const newAvenue = new avenue({
+    avenueName,
+    director,
+    desc,
+    fullDesc
+  })
+  newAvenue.save((error, avenue) => {
+    if(error) {
+      console.log(error.message);
+      return res.status(200).json({error})
+    }
+    return res.status(200).json({avenueName, director,desc,fullDesc});
+  })
+}

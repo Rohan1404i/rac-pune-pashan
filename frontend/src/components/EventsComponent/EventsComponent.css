@@ -54,10 +54,12 @@ hr{
 }
 
 .eachEventTitle {
+    text-decoration: none;
     color: #ffffff;
     font-size: 30px;
 }
 .eachEventDate {
+    text-decoration: none;
     color: #ffffff;
     font-size: 15px;
 }

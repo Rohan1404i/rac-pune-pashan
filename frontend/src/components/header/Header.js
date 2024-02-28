@@ -66,17 +66,17 @@ function Header() {
                 Login
               </NavLink>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <NavLink
                 exact
-                to="/"
+                to="/events/CMD"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                Contact Us
+                Events
               </NavLink>
-            </li> */}
+            </li>
             <li className="nav-item">
               <NavLink
                 exact

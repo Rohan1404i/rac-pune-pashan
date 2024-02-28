@@ -1,4 +1,6 @@
 const blog = require("../modals/blogs");
+const avenue = require("../modals/avenue");
+const events = require("../modals/events");
 require("dotenv").config();
 
 exports.blog_get = async (req, res) => {

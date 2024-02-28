@@ -9,6 +9,7 @@ import AddUser from "./components/AdminPanel/AddUser";
 import AddEvent from "./components/AdminPanel/AddEvent";
 import BlogsComponent from "./components/BlogsComponent";
 import AllBlogsComponent from "./components/AllBlogsComponent";
+import EventsAvenueComponent from "./components/EventsAvenueComponent";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route exact path="/addEvent" element={<AddEvent />} />
           <Route exact path="/blogs" element={<AllBlogsComponent />} />
           <Route exact path="/blogs/:blogId" element={<BlogsComponent />} />
+          <Route exact path="/events/:avenueId" element={<EventsAvenueComponent />} />
+          {/* <Route exact path="/events/:avenue" element={<BlogsComponent />} /> */}
         </Routes>
       </Router>
     </div>
