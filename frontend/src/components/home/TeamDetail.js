@@ -12,9 +12,10 @@ function TeamDetail({teamsDetail}) {
         <div className="team-main">
         <div className="team-container">
             <div className="card">
-            <div className="content">
-                <img src={image.includes('http')?image:teamDefault} alt="Team" width="300px" height="350px" />
-                <h2>{fullname}</h2>
+            <div className="content" style={{width: '200px', height:'auto', borderRadius:'15px'}}>
+                <img src={image.includes('http')?image:teamDefault} alt="Team" width="200px" height="250px"
+                    style={{borderRadius:'15px'}} />
+                <h2 style={{margin:'0'}}>{fullname}</h2>
                 {/* <a
                 className="facebook"
                 href={fbSrc}

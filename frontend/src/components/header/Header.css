@@ -3,7 +3,7 @@
     background-color: #171717;
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -12,37 +12,46 @@
   }
   
   .nav-container {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 80px;
-    max-width: 1500px;
   }
 
-  .nav-container p{
-    margin-right: 320px;
+  .nav-logo p{
+    /* margin-right: 320px; */
     color: #fff;
+    white-space: nowrap;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
+    font-size: 1rem;
     letter-spacing: 1px;
   }
   
   .nav-logo {
+    max-width: 30%;
     color: #f5b921;
     align-items: center;
-    margin-left: 100px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
   
   .nav-menu {
+    position: relative;
+    max-width: 80%;
+    right: 5vh;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     list-style: none;
     text-align: center;
-    margin-right: 2rem;
   }
   
   .nav-links {
@@ -50,6 +59,7 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
+    white-space: nowrap;
     border-bottom: 3px solid transparent;
   }
   .fa-code {
@@ -58,7 +68,6 @@
   
   .nav-item {
     line-height: 40px;
-    margin-right: 1.5rem;
   }
   
   .nav-item:after {
@@ -77,7 +86,7 @@
   
   .nav-item .active {
     color: #ffdd40;
-    border: 1px solid #ffdd40;
+    /* border: 1px solid #ffdd40; */
   }
   
   .nav-icon {
@@ -124,4 +133,8 @@
       cursor: pointer;
       color: #ffdd40;
     }
+  }
+
+  @media screen and (max-width: 500px) {
+
   }

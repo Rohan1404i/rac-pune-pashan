@@ -11,13 +11,12 @@ function Header() {
 
     const handleClick = () => setClick(!click);
   return (
-    <div onClick={e => setOpenSearch(false)}>
-      <nav className="navbar">
+      <nav className="navbar" onClick={e => setOpenSearch(false)}>
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
             <img src={logo} alt="RaC-AP" height="70px"/>
+            <p>Rotaract Club of <br /> Pune Pashan</p>
           </NavLink>
-          <p>Rotaract Club of <br /> Pune Pashan</p>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <NavLink
@@ -97,7 +96,6 @@ function Header() {
         </div>
         <SearchBarComponent openSearch={openSearch} setOpenSearch={setOpenSearch}/>
       </nav>
-    </div>
   );
 }
 

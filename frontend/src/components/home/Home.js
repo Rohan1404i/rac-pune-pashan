@@ -30,15 +30,17 @@ function Home() {
             Mollitia perspiciatis cumque aliquid quam.
           </p>
         </div>
-        <h3>Meet our President</h3>
-        <hr width="30%" />
+        {/* <h3>Meet our President</h3> */}
+        {/* <hr width="30%" /> */}
         <div className="teams-section">
+          <h3>Meet our President</h3>
           <Team />
         </div>
         <EventsComponent />
-        <h3>Our Theme of the Year</h3>
-        <hr width="30%" />
+        {/* <h3>Our Theme of the Year</h3> */}
+        {/* <hr width="30%" /> */}
         <div className="theme-section">
+          <h3>Our Theme of the Year</h3>
           <img src={themeImg} alt="Theme" className='theme-image' />
         </div>
         <h3>Aid us in creating a Better Planet</h3>

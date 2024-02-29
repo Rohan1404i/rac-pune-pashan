@@ -1,9 +1,15 @@
 .home .about {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     padding: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.about p {
+    width: 40%;
 }
 
 .home-logo {
@@ -35,19 +41,31 @@ p span{
 
 .teams-section{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.teams-section h3 {
+    position: relative;
+    margin: 0;
+    bottom: 10vh;
 }
 
 .theme-section{
     width: 100%;
-    height: auto;
+    height: 80vh;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.theme-section h3 {
+
 }
 
 .theme-image {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 

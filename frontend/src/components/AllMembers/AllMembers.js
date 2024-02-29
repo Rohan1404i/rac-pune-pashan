@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './AllMembers.css';
 import TeamDetail from '../home/TeamDetail';
+import president from '../../assets/president.png'
 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +13,12 @@ function AllMembers() {
 
 
  const[Leader,setLeader]= useState([]);
+
+ const [teamsDetail, setTeamsDetail] = useState([
+  {fullname : 'Rtr. Pooja Patil', image : president},
+  {fullname : 'Rtr. Kartik Aaryan', image : ''},
+  {fullname : 'Rtr. Pushpal Singh', image : ''}
+ ])
 
 const navigate =useNavigate();
 
@@ -35,24 +42,21 @@ const navigate =useNavigate();
      getNonLeader();
      },[]);
   return (
-    <div className="team flex-col" style={{width:"100%", height:"30vh"}} id="team">
+    <div className="team" style={{width:"100%", height:"auto"}} id="team">
       <Header />
 
-<div className='flex-col'>
-
-    
-<p className="contTitle">Our community Leaders</p>
-
-        {Leader?.map((teamsDetail) => (
-            
-              <TeamDetail teamsDetail={teamsDetail} key={teamsDetail._key} />
-            ))}
-
-
-
-</div>
-    <div className='flex-col' style={{width:"100%", height:"30vh"}}>
-      <p className="contTitle">Our community members</p>
+    <p className="contTitle">Our Team</p>
+    <p className="contTitle">Our community Core</p>
+    <div className='leadersCont'>        
+      {/* {Leader?.map((teamsDetail) => (
+            <TeamDetail teamsDetail={teamsDetail} key={teamsDetail._key} />
+      ))} */}
+      <TeamDetail teamsDetail={teamsDetail[0]}  />
+      <TeamDetail teamsDetail={teamsDetail[1]} />
+      <TeamDetail teamsDetail={teamsDetail[2]}  />
+    </div>
+    <div className='flex-col' style={{width:"100%", height:"auto"}}>
+      <p className="contTitle">Team Leaders of Our CLub</p>
           <div className='teamCont'>
             {nonLeader?.map((teamsDetail) => (
             
