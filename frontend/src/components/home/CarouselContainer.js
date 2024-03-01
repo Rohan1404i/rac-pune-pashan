@@ -1,43 +1,31 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import "./CarouselContainer.css";
-import Img1 from "../../assets/carousel1.jpg";
+import React, { useEffect, useRef, useState } from 'react';
+import './CarouselContainer.css'; 
+import carousel1 from '../../assets/carousel1.jpg'
+import video1 from '../../assets/video1.mp4';
+import video2 from '../../assets/video2.mp4';
+import {Carousel} from 'antd';
 
-function CarouselContainer() {
+export default function CarouselContainer (){
+
+  const curRef = useRef();
+
+  const onChange = (currentSlide) => {
+    console.log(currentSlide);
+  };
+
+  console.log(curRef)
+
   return (
-    // <div>
-    //   <Carousel>
-    //     <Carousel.Item>
-    //       <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-    //       <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-    //       <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-    //     </Carousel.Item>
-        
-    //   </Carousel>
-    // </div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-        </div>
-        <div class="carousel-item">
-          <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-        </div>
-        <div class="carousel-item">
-          <img className="d-flex w-100 banner" src={Img1} alt="First slide" style={{width:"100%", height:"auto"}} />
-        </div>
+  <Carousel ref={curRef} afterChange={onChange} className='carouselWholeCont'>
+      <div className='eachCont'>
+        <video src={video1} className='video' autoPlay controls muted/>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
+      <div className='eachCont'>
+        <img src={carousel1} style={{width:'100%'}}/>
+      </div>
+      <div className='eachCont'>
+        <video src={video2} className='video' autoPlay controls muted/>
+      </div>
+    </Carousel>  
   );
-}
-
-export default CarouselContainer;
+};
